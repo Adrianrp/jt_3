@@ -11,8 +11,13 @@ describe "Static pages" do
 
     it "should have the right title" do
 	  visit '/static_pages/home'
-	  expect(page).to have_title("Jespers Torvekøkken | Home")
+	  expect(page).to have_title("Jespers Torvekøkken")
 	end
+
+	it "should not have a custom page title" do
+      visit '/static_pages/home'
+      expect(page).not_to have_title('| Home')
+    end
   end
 
   describe "Menus page" do
