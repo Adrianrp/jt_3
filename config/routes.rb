@@ -1,4 +1,6 @@
 Jt3::Application.routes.draw do
+  resources :categories
+
   resources :images
 
   resources :products
