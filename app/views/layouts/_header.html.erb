@@ -1,0 +1,23 @@
+        <div class="header">
+	        <div class="companyMenu right">
+        <ul>
+	        <li><%= link_to "Om os",     '#' %></li>
+	        <li><%= link_to "Vilkår",    '#' %></li>
+	        <li><%= link_to "FAQ",    	 '#' %></li>
+	        <li><%= link_to "Kontakt",   '#' %></li>
+        </ul>
+        </div>
+        <div class="masthead clearfix">
+        <div class="logo left"><%= link_to image_tag("logo.png", alt: "Jespers"), root_path %><h1>Jesper Torvekøkken</h1></div>
+        <div class="kurv right"><%= image_tag("kurv.png", alt: "shopping cart") %><%= link_to "Go to your order", '#' %></div>
+        </div>
+        <div class="navBar clearfix">
+        <div class="julHjerteSmall left"><%= image_tag("heart_small.png", alt: "heart") %></div>
+        <ul>
+	        <li><a href="#"><span class="xs">Netop nu:</span> Jul & Nytår</a></li>
+	        <li><%= link_to 'Buffets', buffets_path %></li>
+	        <li><%= link_to "Menus", menus_path %></li>
+	        <li><%= link_to "Big occasions",    '#' %></li>
+        </ul>
+        </div>
+		</div><!-- END OF HEADER -->

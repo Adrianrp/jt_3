@@ -14,6 +14,7 @@ end
 gem 'pg'
 
 # Use SCSS for stylesheets
+gem 'compass-rails', '~> 2.0.alpha.0'
 gem 'sass-rails', '~> 4.0.0'
 
 # Use Uglifier as compressor for JavaScript assets

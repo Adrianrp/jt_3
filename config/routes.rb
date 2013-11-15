@@ -1,7 +1,12 @@
 Jt3::Application.routes.draw do
-  get "static_pages/home"
-  get "static_pages/menus"
-  get "static_pages/buffets"
+  get "users/new"
+  #get "static_pages/home"
+  #get "static_pages/menus"
+  #get "static_pages/buffets"
+  root  'static_pages#home'
+  match '/signup',  to: 'users#new',              via: 'get'
+  match '/menus',   to: 'static_pages#menus',     via: 'get'
+  match '/buffets', to: 'static_pages#buffets',   via: 'get'
   resources :categories
 
   resources :images

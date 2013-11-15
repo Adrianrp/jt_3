@@ -1,0 +1,63 @@
+@mixin alpha_box {
+	background-color: rgba(0, 0, 0, 0.6);
+	padding: 33px 0 33px 0;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	
+}
+@mixin big_btn {
+	position: relative;
+	right: 50px;
+	opacity: .9;
+
+	a{
+		color: $white;
+		display: block;
+	    padding: 22px 53px;
+	    //background-color: $jul;
+	    text-transform: uppercase;
+	    font-family: "NeutraDisplay";
+	    font-size: 1.5em;
+	    @include gradient($julLight, $jul);
+	}
+	&:hover {
+		opacity: 1;
+	}
+}
+@mixin btn_boxes {
+	  //opacity: .9;
+	
+	a {
+		display: block;
+		@include gradient($grey, $dark);
+		color: $white;
+		text-align: center;
+		padding: 10px;
+	}
+	&:hover {
+
+	}
+}
+@mixin gradient($from, $to) {
+  /* fallback/image non-cover color */
+  background-color: $from;
+ 
+  /* Firefox 3.6+ */
+  background-image: -moz-linear-gradient($from, $to);
+ 
+  /* Safari 4+, Chrome 1+ */
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($from), to($to));
+ 
+  /* Safari 5.1+, Chrome 10+ */
+  background-image: -webkit-linear-gradient($from, $to);
+ 
+  /* Opera 11.10+ */
+  background-image: -o-linear-gradient($from, $to);
+}
+
+@mixin radius($radius) {
+	-webkit-border-radius: $radius;
+    border-radius: $radius;
+}

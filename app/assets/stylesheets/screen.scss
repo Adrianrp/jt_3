@@ -1,0 +1,572 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+*/
+
+@import "compass/reset";
+@import "compass/typography";
+@import "compass/css3/box-shadow";
+//@import "compass/css3/border-radius";
+@import "compass/css3";
+@import "mixins";
+
+/*************** VARIABLES ********************/
+$boxS: 290px;
+$boxL: 500px;
+$green: #b2b735;
+$darkGreen: #a0a435;
+$white: #fff;
+$black: #000;
+$navDivider: #676767;
+
+/**** SEASON STYLES *****/
+$jul: #d82158;
+$julLight: #fd2868;
+$dark: #252525;	
+$grey: #464646;
+$shadow: #b8b8b8;
+/**** FONTS	 *****/
+$JesperFont: "NeutraDisplay";
+//@include font-face("OpenSans", font-files("../fonts/OpenSans-Regular.ttf"));
+//@include font-face("NeutraDisplay", font-files("../fonts/NeutraDisplay-Bold.otf"));
+
+
+@font-face {
+font-family: NeutraDisplay;
+src: url("../fonts/NeutraDisplay-Bold.otf") format("opentype");
+}
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,700italic,300,700);
+
+/*------------------------- GENERAL ---------------------------------*/
+html, body {
+	font-family: "Open Sans", sans-serif;
+	font-weight: 300;
+	font-size: 1em;
+	}
+a {
+	text-decoration: none;
+	color: $black;
+	&:hover { 
+		color:$jul; 
+		}
+}
+h1 {
+	font: 3.5em $JesperFont;
+	text-transform: uppercase;
+	margin: 15px 0;
+}
+h2 {
+	font: 1.4em $JesperFont;
+	text-transform: uppercase;
+	margin: 15px 0;
+}
+h3 {
+	font: 1.2em $JesperFont;
+	text-transform: uppercase;
+	margin-bottom: 5px;
+}
+strong {
+	font-weight: 700;
+}
+blockquote {
+	margin: 30px 0 30px 0;
+	font-style: italic;
+	font-size: 1.2em;
+	font-weight: 700;
+	line-height: 25px;
+}
+/*------------------------- LAYOUT ---------------------------------*/
+.container {
+	width: 1000px;
+	margin: 0 auto;
+}
+.right {
+	float: right;
+}
+.left {
+	float: left;
+}
+.clearfix {
+	clear: both;
+}
+
+/*------------------------- NAV ---------------------------------*/
+.companyMenu {
+	font-family: "Open Sans";
+	text-transform: uppercase;
+	font-size: .9em;
+	
+	ul { margin-top: 10px; }
+	
+	li {
+		float: left;
+		margin: 10px;
+	}
+	li:last-child {
+		margin-right: 0px;
+	}
+}
+.logo {
+	width: 360px;
+	height: 75px;
+	
+	h1 {
+		display: none;
+	}
+}
+h1.logoHead {
+	display: none;
+}
+.julHjerteSmall {
+	padding-top: -20px;
+	position: relative;
+	left: -10px;
+	top: -20px;
+	
+	img {
+		position: absolute;
+	}
+}
+.navBar {
+		height: 50px;
+		background: $dark;
+		text-transform: uppercase;
+		font-family: $JesperFont;
+	ul { 
+		 width: 1000px;
+		 display: block;
+
+	 }
+	li {
+		float: left;
+		
+	}
+	a {
+		color: $white;
+		padding: 17px 30px;
+		border-right: 1px solid $navDivider;
+		display: block;
+		&:hover { 
+		background-color:$jul; 
+		}
+	
+	}
+}
+span.xs {
+	font-size: .7em;
+}
+.kurv {
+	width: 220px;
+	height:82px;
+	//background: url(../images/kurv.png) no-repeat left top;
+	margin: 5px 0 15px 0;
+	
+	img {
+		position: relative;
+		left: 20px;
+		bottom: 5px;
+		z-index: 99;
+	}
+	a {
+		font-family:"Open Sans";
+		font-size: .8em;
+		text-indent: 50px;
+		color: $white;
+		background: url(kurv_bg.png) repeat-x right bottom;
+		display: block;
+		padding: 8px 5px 8px 30px;
+		margin-top: -30px;
+		z-index: -1;
+		&:hover { 
+		background-color:$jul; 
+		}
+		
+	}
+}
+.subNav {
+	width: 220px;
+	height: 500px;
+	background-color: #f1f3f4;
+}
+/*------------------------- FEATURE BOX ---------------------------------*/
+.feature {
+	height: 320px;
+	background: url(jul_bufet.jpg) no-repeat left top;
+	position: relative;
+}
+h1.bigTitle {
+	font-family: $JesperFont;
+	font-size: 3.5em;
+	text-transform: uppercase;
+	color: $julLight;
+	padding-left: 50px;
+	
+	}
+p.bigSubT {
+	font-size: 1.3em;
+	color: $white;
+	padding-left: 50px;
+	
+	strong {
+		font-weight: bold;
+		text-decoration: underline;
+	}
+}
+.alphaBox {
+	@include alpha_box;
+}
+.textContainer {
+	float: left;
+	width: 70%;
+}
+.bigBtn {
+	float: right;
+	@include big_btn;
+} 
+/*------------------------- INTRO SECTION---------------------------------*/
+.boxWrap {
+	//margin: 5px 0 0;
+	float: left;
+	width: 100%;
+	border-bottom: 1px solid $dark;
+}
+.noLine {
+	border-bottom: none;
+}
+.textBoxIntro {
+	width: 480px;
+	margin-bottom: 22px;
+	margin-top: 20px;
+	
+	p {
+		line-height: 25px;
+	}
+	p:last-child {
+		margin-bottom: 10px;
+	}
+	a {
+		color: $jul;
+		&:hover {
+		color: $julLight;
+	}
+	}
+}
+.noSpace {
+	margin-top: 0px;
+}
+/*------------------------- BOXES ---------------------------------*/
+.boxSmall {
+	width: 300px;
+	float: left;
+	margin: 0 50px 37px 0;
+	position: relative;
+
+}
+.last {
+	margin-right: 0px;
+}
+#box-shadow-custom {
+  @include box-shadow($shadow 1px 1px 3px);
+  }
+.btnBox {
+	position: absolute;
+	bottom: 12px;
+	left: 12px;
+	right: 12px;
+	font-family: $JesperFont;
+	text-transform: uppercase;
+	@include btn_boxes;
+	
+	p {
+		font-family: "Open Sans";
+		font-size: .7em;
+		text-transform: none;
+		line-height: 20px;
+	}
+	span {
+		font-size: .6em;
+	}
+	strong {
+		font-size: 1.2em;
+	}
+}
+.stofBox {
+	padding: 25px;
+	font-size: .9em;
+	background: url(stof_bg.png) repeat left top;
+	@include radius(4px);
+	
+	p {
+		line-height: normal;
+	}
+	p:last-child {
+		margin-top: 15px;
+		margin-bottom: 0px;
+	}
+	strong {
+		padding-top: 10px;
+	}
+}
+p.date {
+	color: #3f3f3f;
+	font-size: .8em;
+	padding-bottom: 8px;
+}
+/*------------------------- FOOTER ---------------------------------*/
+.footerWrap {
+	background-color: $dark;
+	color: $white;
+	float: left;
+	margin-top: 20px;
+}
+.contact_form {
+	
+	h2 {
+		font-size: 1.6em;
+	}
+	ul {
+		padding: 25px;
+	}
+	input {
+		width: 239px;
+		height: 35px;
+		margin: 3px 0;
+		border: none;
+		padding-left: 10px;
+		font: .9em "OpenSans";
+		@include radius(1px);
+	}
+}
+button.submit {
+	width: 100%;
+	font: 1em $JesperFont;
+	text-transform: uppercase;
+	border: none;
+	color: $white;
+	padding: 10px;
+	@include gradient($julLight, $jul);
+	&:hover {
+    cursor: pointer;
+}
+}
+address {
+	padding: 25px 0px 25px 25px;
+	font-size: .9em;
+	h2 {
+		font-size: 1.6em;
+		padding-right: 30px;
+	}
+	p {
+		line-height: 20px;	
+	}
+	p:last-child {
+		padding-top: 8px;
+	}
+	a {
+		color: $jul;
+		&:hover{
+			color: $julLight;
+		}
+	}
+}
+.social {
+	padding: 50px 30px 25px 25px;
+	
+	img {
+		padding-top: 10px;
+	}
+	p {
+		padding-top: 20px;
+		padding-right: 10px;
+		text-align: right;
+		font-size: .9em;
+	}
+}
+.julHjerte {
+	padding-top: -20px;
+	position: relative;
+	right: 70px;
+	top: -35px;
+	
+	img {
+		position: absolute;
+	}
+}
+/*------------------------- FORMS ---------------------------------*/
+.formsEx {
+	width: 550px;
+	p {
+		line-height: 20px;
+	}
+	h3 {
+		margin: 20px 0 10px 0;
+	}
+}
+input[type="checkbox"] {
+    display:none;
+}
+input[type="checkbox"] + label span {
+    display:inline-block;
+    width:19px;
+    height:19px;
+    margin:-1px 4px 0 0;
+    vertical-align:middle;
+    background:url(check_radio_sheet.png) left top no-repeat;
+    cursor:pointer;
+}
+input[type="checkbox"]:checked + label span {
+    background:url(check_radio_sheet.png) -19px top no-repeat;
+}
+input[type="radio"] {
+    display:none;
+}
+
+input[type="radio"] + label {
+
+}
+
+input[type="radio"] + label span {
+    display:inline-block;
+    width:19px;
+    height:19px;
+    margin:-1px 4px 0 0;
+    vertical-align:middle;
+    background:url(check_radio_sheet.png) -38px top no-repeat;
+    cursor:pointer;
+}
+
+input[type="radio"]:checked + label span {
+    background:url(check_radio_sheet.png) -57px top no-repeat;
+}
+.contactFormPages {
+	
+		ul {
+		padding-top: 20px;
+	}
+	input {
+		width: 239px;
+		height: 35px;
+		margin: 3px 0;
+		border: none;
+		padding-left: 10px;
+		font: .9em "OpenSans";
+		background-color: #fcfcfc;
+		@include radius(1px);
+	}
+
+}
+
+/*------------------------- TEXT PAGE ---------------------------------*/
+.article {
+	width: 550px;
+	
+	p {
+	margin-bottom: 20px;
+	line-height: 20px;
+	}
+	strong{
+		font-size: 1.1em;
+	}
+	 ul {
+		list-style-type: square;
+		margin-left: 20px;
+		font-weight: 500;
+	}
+	> ul {
+		margin-bottom: 22px;
+	}
+	li {
+		line-height: 20px;
+	}
+	a {
+		color: $darkGreen;	
+		&:hover {
+		color: $green;
+	}
+	}
+}
+.caption {
+	font-size: .8em;
+	font-style: italic;
+	color: $grey;
+	margin-top: 11px;
+	margin-bottom: 22px;
+}
+a.toTop {
+	display: block;
+	text-align: right;
+	border-bottom: 1px solid $dark;
+	padding-bottom: 8px;
+}
+.assetContainer {
+	margin: 240px 160px 0 0;
+}
+.nyhederContainer {
+	width: 820px;
+}
+.nyhederBoxes {
+	width: 100%;
+	border-bottom: 1px solid $dark;
+	padding-bottom: 37px;
+	
+	p {
+		width: 690px;
+		float: left;
+		line-height: 20px;
+	}
+	a {
+		color: $darkGreen;	
+		&:hover {
+		color: $green;
+	}
+	}
+}
+.lastBox {
+	margin-bottom: 20px;
+}
+img.facebook {
+	margin-top: 50px;
+}
+
+/*---------- BUTTON LINK -------------------*/
+.btnLink {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #cfd443), color-stop(1, #969931) );
+	background:-moz-linear-gradient( center top, #cfd443 5%, #969931 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#cfd443', endColorstr='#969931');
+	background-color:#cfd443;
+	-webkit-border-top-left-radius:0px;
+	-moz-border-radius-topleft:0px;
+	border-top-left-radius:0px;
+	-webkit-border-top-right-radius:0px;
+	-moz-border-radius-topright:0px;
+	border-top-right-radius:0px;
+	-webkit-border-bottom-right-radius:0px;
+	-moz-border-radius-bottomright:0px;
+	border-bottom-right-radius:0px;
+	-webkit-border-bottom-left-radius:0px;
+	-moz-border-radius-bottomleft:0px;
+	border-bottom-left-radius:0px;
+	text-indent:0;
+	//border:1px solid #969931;
+	border: none;
+	display:inline-block;
+	color:#ffffff;
+	font: 1em $JesperFont;
+	text-transform: uppercase;
+	height:40px;
+	line-height: 40px;
+	width:150px;
+	text-decoration:none;
+	text-align:center;
+	&:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #cfd443), color-stop(1, #cfd443) );
+	background:-moz-linear-gradient( center top, #cfd443 5%, #cfd443 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#969931', endColorstr='#cfd443');
+	background-color:#cfd443;
+	cursor: pointer;
+	}
+	&:active {
+	position:relative;
+	top:1px;
+	}
+}

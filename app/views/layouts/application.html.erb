@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
   <title><%= full_title(yield(:title)) %></title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
@@ -8,7 +11,72 @@
 </head>
 <body>
 
+<%= render 'layouts/shim' %>
+<div class="container">
+<%= render 'layouts/header' %>
 <%= yield %>
-
-</body>
+<!--
+       <div class="feature">
+        <div class="alphaBox">
+        <div class="textContainer">
+			<h1 class="bigTitle">Julemenu</h1>
+			<p class="bigSubT">Prøv vores Julemenu til kun <strong>199 kr.</strong> pr. person...</p>
+			</div>
+			<div class="bigBtn">
+			<a href="#">Bestil her</a>
+			</div>
+        </div>
+        </div>
+        <div class="boxWrap">
+	        <div class="textBoxIntro left"><h2>Hvorfor vælge Jespers Torvekøkken?</h2>
+	        <p>Vi leverer frokost til mere end 2800 personer hver dag og har i over 20 år stået for større og mindre arrangementer både for private og for virksomheder.</p>
+	        <p>&nbsp</p>
+				<p>Vi glæder os til også at hjælpe dig og din virksomhed.</p>
+	        </div>
+	        <div class="textBoxIntro right"><h2>Vi har frokostordningen til din firma</h2>
+	        <p>Vi lader det være op til dig og dine kolleger at vælge, hvad I helst vil have i jeres frokostordning.</p>
+				<p>Vi leverer i København, Storkøbenhavn, Nordsjælland, Køge og Roskilde.</p>
+				<p><a href="#">Se eksempler på frokostbuffeter</a></p>
+	        </div>
+        </div>
+        <div class="boxWrap">
+        <h2>Sæsonens favoritter</h2>
+	        <div class="boxSmall"><img src="images/box1.jpg" />
+	        <div id="box-shadow-custom" class="btnBox">
+	        <a href="#"><p>Bestil vores</p> julefrokostmenu til <strong>199,-</strong> <span>pr. kuv.</span></a>
+	        </div>
+	        </div>
+	        <div class="boxSmall"><img src="images/box2.jpg" />
+		     <div id="box-shadow-custom" class="btnBox">
+	        <a href="#"><p>Bestil vores</p> julefrokostmenu til <strong>199,-</strong> <span>pr. kuv.</span></a>
+	        </div>
+	        </div>
+	        <div class="boxSmall last"><img src="images/box3.jpg" />
+		     <div id="box-shadow-custom" class="btnBox">
+	        <a href="#"><p>Bestil vores</p> julefrokostmenu til <strong>199,-</strong> <span>pr. kuv.</span></a>
+	        </div>
+	        </div>
+        </div>
+        <div class="boxWrap noLine">
+	        <div class="textBoxIntro left"><h2 class="noSpace">Nyheder</h2>
+	        <div id="box-shadow-custom" class="stofBox"><p class="date">02-07-13</p>
+	        <h3>Efterårsgryde</h3>
+	        <p>Temaer og tradtioner er herlige, men det er op til jer at bestemme, om de skal følges eller brydes. Vi kommer gerne med forslag til både...</p>
+				<a href="#">Læs mere...</a>
+	        </div>
+	        </div>
+	        <div class="textBoxIntro right"><h2 class="noSpace">Det siger kunderne</h2>
+	        <div id="box-shadow-custom" class="stofBox">
+	        <img src="images/stars.png" />
+	        <img class="right" src="images/trust_seal.png" />
+	        <p><strong>Fleksibel og imødkommende.</strong></p>
+	        <p>Jespers Torvekøkken har stor forståelse for kompleksiteten i større arrangementer...</p>
+	        <p>Se anmeldelse <a href="#">her...</a></p>
+	        </div>
+	        </div>
+        </div>
+        -->
+        <%= render 'layouts/footer' %>
+        </div><!-- END CONTAINER -->
+    </body>
 </html>
