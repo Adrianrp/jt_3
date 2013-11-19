@@ -1,0 +1,12 @@
+<% provide(:title, 'New role') %>
+<h1>New role</h1>
+
+<%= form_for(@role) do |f| %>
+<!-- FALTA PONER RENDER FLASH MESSAGES -->
+
+<%= f.label :role %>
+<%= f.text_field :role_name %>
+
+<%= f.submit "Create new role", class: "btnLink" %>
+<% end %>
+

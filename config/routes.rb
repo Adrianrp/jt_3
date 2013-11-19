@@ -1,5 +1,7 @@
 Jt3::Application.routes.draw do
+  #get "roles/new"
   resources :users
+  resources :roles
   #get "users/new"
   #get "static_pages/home"
   #get "static_pages/menus"

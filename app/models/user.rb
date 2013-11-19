@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+	belongs_to :role
 	# This is a callback that forces lowercase on an email BEFORE SAVING it to the db
 	before_save { self.email = email.downcase }
 	before_save :ensure_role_id_has_value
