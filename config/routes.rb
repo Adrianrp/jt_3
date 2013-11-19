@@ -1,5 +1,6 @@
 Jt3::Application.routes.draw do
-  get "users/new"
+  resources :users
+  #get "users/new"
   #get "static_pages/home"
   #get "static_pages/menus"
   #get "static_pages/buffets"
@@ -12,6 +13,8 @@ Jt3::Application.routes.draw do
   resources :images
 
   resources :products
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

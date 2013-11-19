@@ -11,7 +11,10 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 
 group :test do
   gem 'selenium-webdriver', '2.35.1'
+  # This one is used to make a much more compressed syntax for the test fixtures
   gem 'capybara', '2.1.0'
+  # factory_girl is a fixtures replacement with a straightforward definition syntax.
+  gem 'factory_girl_rails', '4.2.1'
 end
 
 # Use postgresql as the database for Active Record
