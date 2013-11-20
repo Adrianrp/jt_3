@@ -1,5 +1,9 @@
 <% provide(:title, 'Menus') %>
 <h1>Menus</h1>
 <p>
-  Here is the list of menus
+  <strong>Here is the list of menus</strong>
+  <br>
+  <% @products.each do |menu| %>
+  <%= menu.title %>
+  <% end %>
 </p>

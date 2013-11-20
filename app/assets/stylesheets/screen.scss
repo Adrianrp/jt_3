@@ -333,6 +333,7 @@ p.date {
 		margin: 3px 0;
 		border: none;
 		padding-left: 10px;
+		background-color: #fff;
 		font: .9em "OpenSans";
 		@include radius(1px);
 	}
@@ -438,7 +439,7 @@ input[type="radio"] + label span {
 input[type="radio"]:checked + label span {
     background:url(check_radio_sheet.png) -57px top no-repeat;
 }
-.contactFormPages, .new_user {
+.contactFormPages, .new_user, form {
 	input.btnLink {
 		display: block;
 	}

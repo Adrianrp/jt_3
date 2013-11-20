@@ -13,6 +13,7 @@ class UsersController < ApplicationController
   def create
   	@user = User.new(user_params)
   	if @user.save
+      sign_in @user
   		flash[:success] = "Welcome to Jespers Torvekøkken dashboard"
   		# This redirects to the users show page
   		redirect_to @user
