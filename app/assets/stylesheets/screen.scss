@@ -5,7 +5,7 @@
 
 @import "compass/reset";
 @import "compass/typography";
-@import "compass/css3/box-shadow";
+//@import "compass/css3/box-shadow";
 //@import "compass/css3/border-radius";
 @import "compass/css3";
 @import "mixins";
@@ -439,7 +439,7 @@ input[type="radio"] + label span {
 input[type="radio"]:checked + label span {
     background:url(check_radio_sheet.png) -57px top no-repeat;
 }
-.contactFormPages, .new_user, form {
+.contactFormPages {
 	input.btnLink {
 		display: block;
 	}
@@ -470,12 +470,6 @@ input[type="radio"]:checked + label span {
     margin: 0 0 18px 0;
   }
 }
-/*
-.field_with_errors {
-  @extend .control-group;
-  @extend .error;
-}
-*/
 /*------------------------- TEXT PAGE ---------------------------------*/
 .article {
 	width: 550px;
@@ -569,7 +563,7 @@ img.facebook {
 	text-indent:0;
 	//border:1px solid #969931;
 	border: none;
-	display:inline-block;
+	display:block;
 	color:#ffffff;
 	font: 1em $JesperFont;
 	text-transform: uppercase;
