@@ -1,6 +1,6 @@
-<h1>Listing images</h1>
+<h2>Listing images</h2>
 
-<table>
+<table class="table table-condensed">
   <thead>
     <tr>
       <th>Product</th>
@@ -14,8 +14,9 @@
   <tbody>
     <% @images.each do |image| %>
       <tr>
-        <td><%= image.product_id %></td>
-        <td><%= image.image %></td>
+
+        <td><%= image.product.title %></td>
+        <td><%= image_tag(image.image, alt: "image", class: "imgSmall") %></td>
         <td><%= link_to 'Show', image %></td>
         <td><%= link_to 'Edit', edit_image_path(image) %></td>
         <td><%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %></td>

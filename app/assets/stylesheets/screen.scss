@@ -258,7 +258,7 @@ p.bigSubT {
 .boxSmall {
 	width: 300px;
 	float: left;
-	margin: 0 50px 37px 0;
+	margin: 0 33px 37px 0;
 	position: relative;
 
 }
@@ -279,15 +279,22 @@ p.bigSubT {
 	
 	p {
 		font-family: "Open Sans";
-		font-size: .7em;
+		font-size: .9em;
 		text-transform: none;
+		color: $jul;
 		line-height: 20px;
 	}
 	span {
-		font-size: .6em;
+		font-size: .7em;
+		text-transform: lowercase;
+
+		strong {
+			//font-weight: 700;
+			font-size: 1.2em;
+		}
 	}
-	strong {
-		font-size: 1.2em;
+	a:hover {
+		text-decoration: none;
 	}
 }
 .stofBox {
@@ -311,6 +318,21 @@ p.date {
 	color: #3f3f3f;
 	font-size: .8em;
 	padding-bottom: 8px;
+}
+img.imgSmall {
+	width: 20%;
+}
+.presBox {
+	text-align: center;
+
+	h3 {
+		padding-top: 20px;
+	}
+
+	p {
+		padding: 0 90px 20px;
+		line-height: 20px;
+	}
 }
 /*------------------------- FOOTER ---------------------------------*/
 .footerWrap {

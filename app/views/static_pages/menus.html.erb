@@ -1,9 +1,8 @@
-<% provide(:title, 'Menus') %>
-<h1>Menus</h1>
-<p>
-  <strong>Here is the list of menus</strong>
-  <br>
-  <% @products.each do |menu| %>
-  <%= menu.title %>
-  <% end %>
-</p>
+<% provide(:title, 'All Menus') %>
+<div class="boxWrap noLine">
+	<div class="presBox">
+		<h3>Intro title here</h3>
+		<p>Flank fatback tenderloin spare ribs bresaola. Boudin pig ribeye biltong pork belly corned beef andouille jerky tongue kielbasa pork jowl bacon. Turkey jerky meatball pig spare ribs!</p>
+	</div>
+</div>
+<%= render 'product_box' %>

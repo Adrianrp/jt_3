@@ -1,6 +1,6 @@
 @mixin alpha_box {
 	background-color: rgba(0, 0, 0, 0.6);
-	padding: 33px 0 33px 0;
+	padding: 0 0 16px 0;
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -10,6 +10,7 @@
 @mixin big_btn {
 	position: relative;
 	right: 50px;
+	bottom: -30px;
 	opacity: .9;
 
 	a{
@@ -18,12 +19,13 @@
 	    padding: 22px 53px;
 	    //background-color: $jul;
 	    text-transform: uppercase;
-	    font-family: "NeutraDisplay";
+	    //font-family: "NeutraDisplay";
 	    font-size: 1.5em;
 	    @include gradient($julLight, $jul);
 	}
 	&:hover {
 		opacity: 1;
+		text-decoration: none;
 	}
 }
 @mixin btn_boxes {

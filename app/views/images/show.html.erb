@@ -1,13 +1,17 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Product:</strong>
+  <strong>Product id:</strong>
   <%= @image.product_id %>
+</p>
+<p>
+	<strong>Product title:</strong>
+	<%= @image.product.title %>
 </p>
 
 <p>
-  <strong>Image:</strong>
-  <%= @image.image %>
+  <strong>Image:</strong><br />
+  <%= image_tag(@image.image, alt: "image") %>
 </p>
 
 <%= link_to 'Edit', edit_image_path(@image) %> |

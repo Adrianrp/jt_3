@@ -1,0 +1,13 @@
+<div class="boxWrap">
+        <h2><%= yield(:title) %></h2>
+        <% @products.each do |product| %>
+        <div class="boxSmall"><%= image_tag(give_me_image(product.images), alt: product.title) %>
+        	<div id="box-shadow-custom" class="btnBox">
+        		<%= link_to(product) do %>
+        		 <p><%= product.title %></p>
+        		<span>price per person <strong><%= product.price %> kr</strong></span>
+        		<% end %>
+        	</div><!-- END BOX-SHADOW -->
+        </div><!-- END BOXSMALL -->
+        <% end %>
+        </div><!-- END BOXWRAP -->
