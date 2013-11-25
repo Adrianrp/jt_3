@@ -39,6 +39,22 @@ module SessionsHelper
    		# ||= (means: or equals)
     	@current_user ||= User.find_by(remember_token: remember_token)
   end
+    # Returns a boolean
+    def current_user?(user)
+    user == current_user
+  end
+
+  # This method redirects to the requested URL if it exists, or some default
+  def redirect_back_or(default)
+    redirect_to(session[:return_to] || default) # if it results nil redirect to default
+    session.delete(:return_to)
+  end
+  # This method puts the requested URL in the session variable under the key :return_to,
+  # only for a GET request (if request.get?)
+  # To be able to use store_location we add it to the signed_in_user before filter.
+  def store_location
+    session[:return_to] = request.url if request.get?
+  end
 end
 
 # After the cookie is set, on subsequent page views we can retrieve the user 

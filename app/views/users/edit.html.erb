@@ -1,0 +1,27 @@
+<% provide(:title, "Edit user") %>
+<h1>Update your profile</h1>
+
+<div>
+	<%= form_for(@user) do |f| %>
+		<%= render 'shared/error_messages' %>
+
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+
+		<%= f.label :email %>
+		<%= f.text_field :email %>
+
+		<%= f.label :password %>
+		<%= f.password_field :password %>
+
+		<%= f.label :password_confirmation, "Confirm password" %>
+		<%= f.password_field :password_confirmation %>
+
+		<% if current_user.role_id == 2 %>
+		<%= f.label :role_id %>
+		<%= f.text_field :role_id %>
+		<% end %>
+
+		<%= f.submit "Save changes", class: "btnLink" %>
+		<% end %>
+		</div>

@@ -1,3 +1,8 @@
 <% provide(:title, @user.name) %>
-<h1><%= gravatar_for @user %>
-<%= @user.name %></h1>
+<h1><%= @user.name %></h1>
+
+<ul>
+	<li>Your email is: <%= @user.email %></li>
+	<li>You are registered as a: <%= @user.role.role_name %></li>
+	<li>You have bought the following products:</li>
+</ul>
