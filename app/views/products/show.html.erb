@@ -1,29 +1,37 @@
-<p id="notice"><%= notice %></p>
+<div class="boxWrap noLine">
+<div id="box-shadow-custom" class="productBox left">
+<!--<p id="notice"><%= notice %></p>-->
+<%= image_tag(give_me_image(@product.images), alt: @product.title) %>
+<h2><%= @product.title %></h2>
 
 <p>
-  <strong>Image:</strong>
-  <%= @product.image_id %>
+  <%= sanitize(@product.description) %>
 </p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @product.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
-
-<p>
+<p class="price">
   <strong>Price:</strong>
-  <%= @product.price %>
+  <%= @product.price %> kr. per person
 </p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @product.category_id %>
-</p>
-
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+<div class="box100">
+  <%= link_to 'order here', '#', class: "btnLink middle" %>
+</div>
+</div><!-- END OF PRODUCTBOX -->
+<div class="boxSmall last right">
+  <div id="box-shadow-custom" class="orderBox">
+    <h3><%= @product.title %></h3>
+    <p><strong><%= @product.price %> kr.</strong> per person</p>
+    <%= link_to 'order here', '#', class: "btnLink middle" %>
+    <p>or give us a call<span>33 22 11 44</span></p>
+  </div><!-- END OF ORDERBOX -->
+  <div id="box-shadow-custom" class="orderBox">
+    <h4>Our costumers are saying</h4>
+          <%= image_tag("stars.png", alt: "stars") %>
+          <p><strong>Fleksibel og imødkommende.</strong></p>
+          <span class="review">"Jespers Torvekøkken har stor forståelse for kompleksiteten i større arrangementer"...</span>
+          <span class="review"><%= link_to 'læs mere her', '#' %></span>
+          <%= image_tag("trust_seal.png", alt: "stars") %>
+  </div><!-- END OF ORDERBOX -->
+</div><!-- END OF BOXSMALL -->
+</div><!-- END OF BOXWRAP -->
+<!--<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>-->
