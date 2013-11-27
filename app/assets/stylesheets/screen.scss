@@ -518,6 +518,23 @@ address {
 		position: absolute;
 	}
 }
+
+/*------------------------- TABLE ORDERSTATUS ---------------------*/
+table.statusOrder{
+	text-transform: lowercase;
+	font-size: .9em;
+
+	td.title {
+		text-align: center;
+		border-top: none;
+		font-weight: 700;
+		text-transform: uppercase;
+		font-size: 1em;
+	}
+	td.extraSpace {
+		padding-top: 10px;
+	}
+}
 /*------------------------- FORMS ---------------------------------*/
 .formsEx {
 	width: 550px;

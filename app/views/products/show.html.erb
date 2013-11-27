@@ -10,17 +10,19 @@
 
 <p class="price">
   <strong>Price:</strong>
-  <%= @product.price %> kr. per person
+  <%= currency_kr(@product.price) %> per person
 </p>
 <div class="box100">
-  <%= link_to 'order here', '#', class: "btnLink middle" %>
+  <!--<%= link_to 'order here', '#', class: "btnLink middle" %>-->
+  <%= button_to 'order here', line_items_path(product_id: @product), class: "btnLink middle" %>
 </div>
 </div><!-- END OF PRODUCTBOX -->
 <div class="boxSmall last right">
   <div id="box-shadow-custom" class="orderBox">
     <h3><%= @product.title %></h3>
-    <p><strong><%= @product.price %> kr.</strong> per person</p>
-    <%= link_to 'order here', '#', class: "btnLink middle" %>
+    <p><strong><%= currency_kr(@product.price) %></strong> per person</p>
+    <!--<%= link_to 'order here', '#', class: "btnLink middle" %>-->
+    <%= button_to 'order here', line_items_path(product_id: @product), class: "btnLink middle" %>
     <p>or give us a call<span>33 22 11 44</span></p>
   </div><!-- END OF ORDERBOX -->
   <div id="box-shadow-custom" class="orderBox">

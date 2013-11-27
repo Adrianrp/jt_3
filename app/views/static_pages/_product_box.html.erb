@@ -5,7 +5,7 @@
         	<div id="box-shadow-custom" class="btnBox">
         		<%= link_to(product) do %>
         		 <p><%= product.title %></p>
-        		<span>price per person <strong><%= product.price %> kr</strong></span>
+        		<span>price per person <strong><%= currency_kr(product.price) %> </strong></span>
         		<% end %>
         	</div><!-- END BOX-SHADOW -->
         </div><!-- END BOXSMALL -->
