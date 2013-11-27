@@ -413,6 +413,29 @@ img.imgSmall {
 		}
 	}
 }
+.boxAccordion {
+	margin: 10px;
+
+	h3 {
+		color: $jul;
+	}
+	img {
+		width: 200px;
+		float:left;
+		padding: 10px;
+	}
+}
+.details {
+	padding: 10px 0 10px 10px;
+	line-height: 20px;
+
+	strong {
+		color: $jul;
+	}
+	p {
+		line-height: 20px;
+	}
+}
 /*------------------------- FOOTER ---------------------------------*/
 .footerWrap {
 	background-color: $dark;

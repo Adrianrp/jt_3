@@ -1,34 +1,40 @@
-<h1>All products</h1>
-<%= link_to 'New Product', new_product_path, class: "btn btn-success" %>
+<h2>All products</h2>
+
+<%= link_to 'New Product', new_product_path, class: "btn btn-success" %><br>
 <p>&nbsp</p>
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th>Image</th>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Price</th>
-      <th>Category</th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @products.each do |product| %>
-      <tr>
-        <td><%= image_tag(give_me_image(product.images), alt: product.title) %></td>
-        <td><%= product.title %></td>
-        <td><%= product.description %></td>
-        <td><%= product.price %></td>
-        <td><%= product.category_id %></td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Product', new_product_path, class: "btn btn-success" %>
+<div class="bs-example">
+<div class="panel-group" id="accordion">
+<% @products.each do |product| %>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#<%= product.id %>">
+          <%= product.title %>
+        </a>
+      </h4>
+    </div>
+    <div id="<%= product.id %>" class="panel-collapse collapse">
+      <div class="panel-body">
+      <div class="boxWrap noLine">
+        <div class="boxAccordion">
+        <%= image_tag(give_me_image(product.images), alt: product.title) %>
+        <h3>Product description</h3>
+        <%= product.description %>
+        <div class="details">
+        <p><strong>Price: </strong>
+        <%= product.price %> kr.</p>
+        <p><strong>Category: </strong>
+        <%= product.category_id %></p><br>
+        <%= link_to 'Edit', edit_product_path(product), class: "btn btn-success" %>
+        <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+  </div>
+  </div>
+  <br>
+  <%= link_to 'New Product', new_product_path, class: "btn btn-success" %>
