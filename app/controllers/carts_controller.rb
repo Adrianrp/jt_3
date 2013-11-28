@@ -12,6 +12,8 @@ class CartsController < ApplicationController
   # GET /carts/1
   # GET /carts/1.json
   def show
+    # missing to add an extra(boolean) column in categories, and then combine these
+    # two instances in one query so it can output all the extras, probably needs a nested array
     @product = Product.where(category_id:[4])
     @category = Product.find_by(category_id:[4])
   end

@@ -1,6 +1,6 @@
 <div class="boxWrap noLine">
 	<div id="box-shadow-custom" class="productBox2 left">
-	<table class="table statusOrder">
+	<table id="orderStatus" class="table statusOrder">
 		<thead>
 			<tr>
 				<td class="colorCell"><strong>Order</strong></td>
@@ -41,5 +41,7 @@
 	</table>
 	<%= button_to 'next', '#', class: "btn btn-success right" %>
 	</div><!-- END OF PRODUCTBOX -->
+	
 <%= render @cart %>
+
 </div><!-- END OF BOXWRAP -->
