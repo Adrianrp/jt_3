@@ -12,6 +12,8 @@ class CartsController < ApplicationController
   # GET /carts/1
   # GET /carts/1.json
   def show
+    @product = Product.where(category_id:[4])
+    @category = Product.find_by(category_id:[4])
   end
 
   # GET /carts/new

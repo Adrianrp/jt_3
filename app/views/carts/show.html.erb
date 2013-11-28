@@ -1,27 +1,45 @@
-<h2>your cart</h2>
-<div class="boxSmall last right">
-<div id="box-shadow-custom" class="orderBox">
-<table class="table statusOrder">
-	<% @cart.line_items.each do |item| %>
-	<tr>
-		<td class="title" colspan="4"><%= item.product.title %></td>
-	</tr>
-	<tr>
-		<td><%= item.quantity %> &times;</td>
-		<td><%= item.product.title %></td>
-		<td><%= button_to 'delete', item, method: :delete, class: "btn btn-info btn-mini" %></td>
-		<td><%= currency_kr(item.total_price) %></td>
-	</tr>
-	<% end %>
-
-	<tr>
-		<td colspan="3"><strong>Total</strong></td>
-		<td class="totalPrice"><strong><%= currency_kr(@cart.total_price) %></strong></td>
-	</tr>
-	<tr>
-		<td colspan="4" class="extraSpace"><%= button_to 'Empty cart', @cart, method: :delete, class: "btn btn-default" %></td>
-	</tr>
-</table>
-
-</div>
-</div>
+<div class="boxWrap noLine">
+	<div id="box-shadow-custom" class="productBox2 left">
+	<table class="table statusOrder">
+		<thead>
+			<tr>
+				<td class="colorCell"><strong>Order</strong></td>
+				<td class="colorCell"><strong>Quantity</strong></td>
+				<td class="colorCell textRight"><strong>Price</strong></td>
+			</tr>
+		</thead>
+		<tbody>
+			<% @cart.line_items.each do |item| %>
+    		<%= form_for(item) do |f|%>
+			<tr>
+				<td>
+        		<%= f.text_field :quantity, size: 1, :class => 'smallInput' %> 
+        		
+				<%= item.product.title %>
+				</td>
+				<td><%= f.submit 'Update Qty', :class => 'btn btn-mini' %></td>
+				<td class="textRight"><%= currency_kr(item.product.price) %></td>
+			</tr>
+			<% end %>
+			<% end 	%>
+			<tr>
+				<td class="colorCell"><strong>EXTRAS:</strong></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td colspan="3"><strong><%= @category.category.name %></strong></td>
+			</tr>
+			<% @product.each do |product| %>
+			<tr>
+				<td><%= product.title %></td>
+				<td><%= button_to 'add', line_items_path(product_id: product), class: "btn btn-mini" %></td>
+				<td class="textRight"><%= currency_kr(product.price) %></td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+	<%= button_to 'next', '#', class: "btn btn-success right" %>
+	</div><!-- END OF PRODUCTBOX -->
+<%= render @cart %>
+</div><!-- END OF BOXWRAP -->

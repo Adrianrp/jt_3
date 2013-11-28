@@ -1,0 +1,14 @@
+<div class="boxSmall last right">
+	<div id="box-shadow-custom" class="orderBox">
+		<table class="table statusOrder">
+			<%= render(cart.line_items) %>
+			<tr>
+				<td colspan="3"><strong>Total</strong></td>
+				<td class="totalPrice"><strong><%= currency_kr(cart.total_price) %></strong></td>
+			</tr>
+			<tr>
+				<td colspan="4" class="extraSpace"><%= button_to 'Empty cart', cart, method: :delete, class: "btn btn-default" %></td>
+			</tr>
+		</table>
+	</div>
+</div>

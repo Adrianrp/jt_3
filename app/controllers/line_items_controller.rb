@@ -54,9 +54,14 @@ class LineItemsController < ApplicationController
   # PATCH/PUT /line_items/1
   # PATCH/PUT /line_items/1.json
   def update
+    @line_item = LineItem.find(params[:id])
+
     respond_to do |format|
-      if @line_item.update(line_item_params)
-        format.html { redirect_to @line_item, notice: 'Line item was successfully updated.' }
+      if @line_item.update_attributes(line_item_params)
+        if (@line_item.quantity == 0)
+          @line_item.destroy
+        end
+        format.html { redirect_to @line_item.cart }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -75,8 +80,7 @@ class LineItemsController < ApplicationController
         format.html { redirect_to root_url, 
              notice: 'Your cart is currently empty' }
            else
-            format.html { redirect_to :back,
-           notice: 'Line item removed' }
+            format.html { redirect_to :back }
       end
       #format.html {redirect_to :back}
       #format.html { redirect_to line_items_url }
@@ -92,6 +96,6 @@ class LineItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def line_item_params
-      params.require(:line_item).permit(:product_id)
+      params.require(:line_item).permit(:product_id, :quantity)
     end
 end

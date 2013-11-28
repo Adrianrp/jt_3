@@ -94,7 +94,7 @@ blockquote {
 .companyMenu {
 	font-family: "Open Sans";
 	text-transform: uppercase;
-	font-size: .9em;
+	font-size: .8em;
 	
 	ul { 
 		margin-top: 0px; 
@@ -146,10 +146,11 @@ h1.logoHead {
 	a {
 		color: $white;
 		padding: 17px 30px;
-		border-right: 1px solid $navDivider;
+		//border-right: 1px solid $navDivider;
 		display: block;
 		&:hover { 
-		background-color:$jul; 
+		background-color:$jul;
+		text-decoration: none; 
 		}
 	
 	}
@@ -367,6 +368,14 @@ img.imgSmall {
 		line-height: 80px;
 	}
 }
+.productBox2 {
+	width: 640px;
+	margin: 20px 20px 0 0;
+	padding: 0 20px 20px;
+	background: url(stof_bg.png) repeat left top;
+	@include radius(4px);
+	font-size: .9em;
+}
 .box100 {
 	width: 100%;
 }
@@ -534,6 +543,23 @@ table.statusOrder{
 	td.extraSpace {
 		padding-top: 10px;
 	}
+}
+table td.noTop {
+	border-top: none;	
+	}
+input[type="text"].smallInput {
+	width: 15px;
+	height: 10px;
+	font-size: .8em;
+	margin-bottom: 0;
+	line-height: 15px;
+}
+.colorCell {
+	color: $jul;
+	text-transform: uppercase;
+}
+.textRight {
+	text-align: right !important;
 }
 /*------------------------- FORMS ---------------------------------*/
 .formsEx {
