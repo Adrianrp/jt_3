@@ -39,7 +39,8 @@
 			<% end %>
 		</tbody>
 	</table>
-	<%= button_to 'next', '#', class: "btn btn-success right" %>
+	<%= button_to "next", new_order_path, method: :get, class: "btn btn-success right" %>
+	<%#= button_to 'next', '#', class: "btn btn-success right" %>
 	</div><!-- END OF PRODUCTBOX -->
 	
 <%= render @cart %>

@@ -1,0 +1,50 @@
+<div class="orderForm">
+<%= form_for(@order) do |f| %>
+  <% if @order.errors.any? %>
+    <div id="error_explanation">
+      <h3><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h3>
+
+      <ul>
+      <% @order.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="fieldName">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="fieldAddress">
+    <%= f.label :address %><br>
+    <%= f.text_field :address %>
+  </div>
+  <div class="fieldPostnr left">
+    <%= f.label :post_nr %><br>
+    <%= f.text_field :post_nr, class: "span1" %>
+  </div>
+  <div class="fieldCity right">
+    <%= f.label :city %><br>
+    <%= f.text_field :city, class: "span3" %>
+  </div>
+  <div class="clearfix"></div>
+  <div class="fieldTlf left">
+    <%= f.label :tlf %><br>
+    <%= f.text_field :tlf, class: "span2" %>
+  </div>
+  <div class="fieldEmail right">
+    <%= f.label :email %><br>
+    <%= f.email_field :email %>
+  </div>
+  <div class="field clearfix">
+    <%= f.label :pay_type %><br>
+    <%= f.select :pay_type, Order::PAYMENT_TYPES,
+                  prompt: 'Select a payment method' %>
+  </div>
+  </div>
+  <div class="actions">
+    <%= f.submit 'next', :class => 'btn btn-success right'  %>
+  </div>
+  
+<% end %>

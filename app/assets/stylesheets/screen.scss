@@ -530,7 +530,7 @@ address {
 
 /*------------------------- TABLE ORDERSTATUS ---------------------*/
 table.statusOrder{
-	text-transform: lowercase;
+	text-transform: capitalize;
 	font-size: .9em;
 
 	td.title {
@@ -556,7 +556,7 @@ input[type="text"].smallInput {
 }
 .colorCell {
 	color: $jul;
-	text-transform: uppercase;
+	text-transform: capitalize;
 }
 .textRight {
 	text-align: right !important;
@@ -630,8 +630,20 @@ input[type="radio"]:checked + label span {
 	}
 
 }
-.gravatar {
-	padding-top: 10px;
+.fieldName, .fieldAddress {
+
+	input[type="text"] {
+		width: 300px;
+	}
+}
+.orderForm {
+	width:315px;
+}
+.fieldEmail {
+
+	input[type="email"] {
+		width: 140px;
+	}
 }
 /*------------------------- TEXT PAGE ---------------------------------*/
 .article {

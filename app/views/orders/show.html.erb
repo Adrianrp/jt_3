@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+<div class="boxWrap noLine">
+<div id="box-shadow-custom" class="productBox2 left">
+<table class="table statusOrder">
+  <thead>
+    <tr>
+      <th colspan="3" class="colorCell"><strong>REVIEW YOUR ORDER BEFORE CHECKOUT</strong></th> 
+    </tr>
+  </thead>
+  <tbody>  
+  <% @products.each do |product| %>
+    <tr>
+    <td class="noTop"><%= @prod_quantity %></td>
+    <td class="noTop"><%= product.category.name %></td>
+    <td class="noTop"><%= product.title %></td>
+    <td class="textRight noTop"><%= currency_kr(product.price) %></td>
+    </tr>
+    <% end %>
+    <tr>
+      <td class="colorCell" colspan="3"><strong>total price:</strong></td>
+      <td class="textRight colorCell">
+      <%= currency_kr(@products.sum(&:price)) %>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3" class="colorCell"><strong>Delivery details:</strong></td>
+      <td class="textRight"><%= @order.name %><br>
+          <%= @order.address %><br>
+          <%= @order.post_nr%> <%= @order.city %><br>
+          <%= @order.tlf %><br>
+          <%= @order.email %><br>
+          <%= @order.pay_type %>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<%= link_to 'Confirm Order', '#', class: "btn btn-success right" %>
+</div>
+</div>
+
+<!-- <%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %> -->
