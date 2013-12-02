@@ -13,13 +13,13 @@
     <td class="noTop"><%= @prod_quantity %></td>
     <td class="noTop"><%= product.category.name %></td>
     <td class="noTop"><%= product.title %></td>
-    <td class="textRight noTop"><%= currency_kr(product.price) %></td>
+    <td class="textRight noTop"><%= currency_kr(product.price * @prod_quantity) %></td>
     </tr>
     <% end %>
     <tr>
       <td class="colorCell" colspan="3"><strong>total price:</strong></td>
       <td class="textRight colorCell">
-      <%= currency_kr(@products.sum(&:price)) %>
+      <%= currency_kr(@products.sum(&:price) * @prod_quantity) %>
       </td>
     </tr>
     <tr>
