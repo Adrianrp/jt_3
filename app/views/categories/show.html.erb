@@ -2,7 +2,9 @@
 
 <p>
   <strong>Name:</strong>
-  <%= @category.name %>
+  <%= @category.name %><br>
+  <strong>is this product as extra?: </strong>
+  <%= @category.extra? %>
 </p>
 
 <%= link_to 'Edit', edit_category_path(@category) %> |

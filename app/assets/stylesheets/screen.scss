@@ -587,7 +587,7 @@ input[type="checkbox"]:checked + label span {
     background:url(check_radio_sheet.png) -19px top no-repeat;
 }
 input[type="radio"] {
-    display:none;
+    //display:none;
 }
 
 input[type="radio"] + label {

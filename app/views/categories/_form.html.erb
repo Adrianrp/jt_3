@@ -16,6 +16,17 @@
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
+
+  <div class="control-group">
+  <label class="control-label">Product is an extra: </label>
+  <div class="controls">
+    <%= f.label :yes, :class => 'radio inline' %>
+    <%= f.radio_button :extra, 'true'  %>
+
+    <%= f.label :no, :class => 'radio inline' %>
+    <%= f.radio_button :extra, 'false' %>
+    </div>
+  </div>
   <div class="actions">
     <%= f.submit 'create', :class => 'btn btn-success' %>
   </div>
