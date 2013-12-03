@@ -34,9 +34,12 @@
     </tr>
   </tbody>
 </table>
-<%= link_to 'Confirm Order', '#', class: "btn btn-success right" %>
+<div class="right">
+<%= link_to 'Confirm Order', {controller: :orders, action: :confirm, id: @order}, class: "btn btn-success right" %>
+<%#= link_to 'Confirm order', confirm_order_path(@order) %>
+</div>
 </div>
 </div>
 
-<!-- <%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %> -->
+<%#= link_to 'Edit', edit_order_path(@order) %>
+<%#= link_to 'Back', orders_path %>

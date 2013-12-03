@@ -68,8 +68,14 @@ class OrdersController < ApplicationController
     end
   end
 
-  def confirm_order
+  def confirm
     @order = Order.find(params[:id])
+    if @order.update_attribute(:confirmed, true)
+      redirect_to root_url, notice: "Thank you for your order! You will be contacted within
+                                     24hrs by one of our sales representatives"
+      else
+        render @order.show
+    end
   end
 
   # DELETE /orders/1
@@ -84,11 +90,14 @@ class OrdersController < ApplicationController
 
   private
 
+  # iterates through an array of line_items row an gives back the quantity of each product
+  # bought
   def give_quantity(lineItem)
     lineItem.each do |item|
      return item.quantity
     end
   end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_order
       @order = Order.find(params[:id])

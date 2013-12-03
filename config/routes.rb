@@ -1,5 +1,6 @@
 Jt3::Application.routes.draw do
   resources :orders
+  match '/confirm', to: 'orders#confirm',       via: 'get'
 
   resources :line_items
 
