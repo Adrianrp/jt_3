@@ -27,7 +27,7 @@
         <p><strong>Price: </strong>
         <%= product.price %> kr.</p>
         <p><strong>Category: </strong>
-        <%= product.category_id %></p><br>
+        <%= product.category.name %></p><br>
         <%= link_to 'Edit', edit_product_path(product), class: "btn btn-success" %>
         <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
         </div>

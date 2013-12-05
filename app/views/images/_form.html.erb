@@ -13,9 +13,12 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :product_id %><br>
-    <%= f.number_field :product_id %>
+    <%= f.label :product_id %>
+    <br>
+    <%#= f.select :category_id, (1..2) %>
+    <%= select("image", "product_id", Product.all.collect { |p| [ p.title, p.id ] }, selected: f.object.product_id ) %>
   </div>
+
   <div class="field">
     <%= f.label :image %><br>
     <%= f.text_field :image %>
