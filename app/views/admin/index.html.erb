@@ -1,0 +1,51 @@
+<% provide(:title, 'Admin Section') %>
+<div class="boxWrap noLine">
+<%= render 'layouts/subnav' %>
+<div id="box-shadow-custom" class="adminBox">
+  <h2>Welcome <%= current_user.name %></h2>
+  <p>
+    We have <strong class="colorMe"><%= pluralize(@total_orders, "order") %></strong>.
+  </p>
+  <br>
+<table class="table table-condensed">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Post nr</th>
+      <th>City</th>
+      <th>Tlf</th>
+      <th>Email</th>
+      <th>Pay type</th>
+      <th>Confirmed</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.name %></td>
+        <td><%= order.address %></td>
+        <td><%= order.post_nr %></td>
+        <td><%= order.city %></td>
+        <td><%= order.tlf %></td>
+        <td><%= order.email %></td>
+        <td><%= order.pay_type %></td>
+        <td><%= order.confirmed %></td>
+        <td><%= link_to 'Show', order, class: "btn btn-mini" %></td>
+        <td><%= link_to 'Edit', edit_order_path(order), class: "btn btn-mini" %></td>
+        <td><%= link_to 'Delete', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%#= link_to 'New Order', new_order_path, class: "btn btn-success" %>
+
+</div>
+</div>

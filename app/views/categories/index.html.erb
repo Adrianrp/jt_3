@@ -1,10 +1,12 @@
-<h1>Listing categories</h1>
+<%= render 'layouts/subnav' %>
+<div class="boxWrap noLine">
+  <div id="box-shadow-custom" class="productBox2">
+<h2>Categories</h2>
 
-<table class="table">
+<table class="table table-condensed">
   <thead>
     <tr>
       <th>Name</th>
-      <th></th>
       <th></th>
       <th></th>
     </tr>
@@ -14,14 +16,14 @@
     <% @categories.each do |category| %>
       <tr>
         <td><%= category.name %></td>
-        <td><%= link_to 'Show', category %></td>
-        <td><%= link_to 'Edit', edit_category_path(category) %></td>
-        <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_category_path(category), class: "btn btn-mini" %></td>
+        <td><%= link_to 'Delete', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
 <%= link_to 'New Category', new_category_path, class: "btn btn-success" %>
+</div>
+</div>
+
+

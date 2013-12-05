@@ -1,0 +1,24 @@
+<%= render 'layouts/subnav' %>
+<div class="boxWrap noLine">
+	<div id="box-shadow-custom" class="productBox2">
+			<h2>Roles</h2>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>id</th>
+						<th>Name</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<% @role.each do |role| %>
+					<tr>
+						<td><%= role.id %></td>
+						<td><%= role.role_name %></td>
+					</tr>
+					<% end %>
+				</tbody>
+			</table>
+			<%= link_to 'New role', new_role_path, class: "btn btn-success" %>
+	</div>
+</div>

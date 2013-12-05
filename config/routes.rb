@@ -1,4 +1,5 @@
 Jt3::Application.routes.draw do
+  get 'admin' => 'admin#index'
   resources :orders
   match '/confirm', to: 'orders#confirm',       via: 'get'
 

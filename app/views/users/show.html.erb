@@ -1,8 +1,12 @@
 <% provide(:title, @user.name) %>
-<h1><%= @user.name %></h1>
+<div class="boxWrap noLine">
+<%= render 'layouts/subnav' %>
+<div id="box-shadow-custom" class="productBox2">
 
+<h2><%= @user.name %>´s user profile</h2>
 <ul>
 	<li>Your email is: <%= @user.email %></li>
 	<li>You are registered as a: <%= @user.role.role_name %></li>
-	<li>You have bought the following products:</li>
 </ul>
+</div>
+</div>

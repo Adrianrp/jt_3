@@ -1,5 +1,8 @@
-<h2>Listing images</h2>
-
+<div class="boxWrap noLine">
+<%= render 'layouts/subnav' %>
+<div id="box-shadow-custom" class="adminBox">
+<h2>All images</h2>
+<%= link_to 'New Image', new_image_path, class: "btn btn-success right" %>
 <table class="table table-condensed">
   <thead>
     <tr>
@@ -19,12 +22,12 @@
         <td><%= image_tag(image.image, alt: "image", class: "imgSmall") %></td>
         <td><%= link_to 'Show', image %></td>
         <td><%= link_to 'Edit', edit_image_path(image) %></td>
-        <td><%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', image, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Image', new_image_path, class: "btn btn-success" %>
+<%= link_to 'New Image', new_image_path, class: "btn btn-success right" %>
+<div class="clearfix"></div>
+</div>
+</div>

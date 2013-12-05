@@ -1,8 +1,33 @@
 <% provide(:title, 'all users') %>
-<h1>All users</h1>
+<%= render 'layouts/subnav' %>
 
-<%= will_paginate %>
-<ul class="users">
-	<%= render @users %>
-</ul>
-<%= will_paginate %>
+<div class="boxWrap noLine">
+	<div id="box-shadow-custom" class="productBox2">
+		<h2>All users</h2>
+
+		
+		<table class="table table-condensed">
+		<%= will_paginate %>
+	<thead>
+		<tr>
+			<th>name</th>
+			<th>email</th>
+			<th>Registered as</th>
+		</tr>
+	</thead>
+			<tbody>
+			<% @users.each do |user| %>
+			<tr>
+					<td><%= user.name %></td>
+					<td><%= user.email %></td>
+					<td><%= user.role.role_name %></td>
+					<td><%= link_to "edit", edit_user_path(user), class: "btn btn-mini" %></td>
+					<td><%= link_to "delete", user, method: :delete, data: { confirm: "Are you sure?" } %></td>
+				</tr>
+			<%#= render @users %>
+			<% end %>
+			</tbody>
+			<%= will_paginate %>
+		</table>
+	</div>
+	</div>

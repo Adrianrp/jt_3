@@ -75,6 +75,9 @@ blockquote {
 	font-weight: 700;
 	line-height: 25px;
 }
+.colorMe {
+	color: $jul;
+}
 /*------------------------- LAYOUT ---------------------------------*/
 .container {
 	width: 1000px;
@@ -375,6 +378,14 @@ img.imgSmall {
 	background: url(stof_bg.png) repeat left top;
 	@include radius(4px);
 	font-size: .9em;
+}
+.adminBox {
+	width: 960px;
+	margin-top: 20px;
+	padding: 0 20px 20px;
+	background: url(stof_bg.png) repeat left top;
+	@include radius(4px);
+	font-size: .8em;
 }
 .box100 {
 	width: 100%;
