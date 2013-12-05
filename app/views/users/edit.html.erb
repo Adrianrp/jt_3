@@ -21,10 +21,10 @@
 		<%= f.label :password_confirmation, "Confirm password" %>
 		<%= f.password_field :password_confirmation %>
 
-		<% if current_user.role_id == 2 %>
-		<%= f.label :role_id %>
-		<%= f.text_field :role_id %>
-		<% end %>
+		<%# if current_user.role_id == 2 %>
+		<%#= f.label :role_id %>
+		<%#= f.text_field :role_id %>
+		<%# end %>
 
 		<%= f.submit "Save changes", class: "btnLink" %>
 		<% end %>

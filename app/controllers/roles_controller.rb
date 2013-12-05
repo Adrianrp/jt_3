@@ -1,4 +1,6 @@
 class RolesController < ApplicationController
+
+  before_action :signed_in_user, only: [:index, :new, :create]
   
   def index
   	@role = Role.all

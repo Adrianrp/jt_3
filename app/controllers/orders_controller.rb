@@ -3,6 +3,7 @@ class OrdersController < ApplicationController
   include CurrentCart
   before_action :set_cart, only: [:new, :create]
   before_action :set_order, only: [:show, :edit, :update, :destroy]
+  before_action :signed_in_user, only: [:index]
 
   # GET /orders
   # GET /orders.json

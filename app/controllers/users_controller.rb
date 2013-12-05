@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   #filter that calls the method: signed_in_user before any other method.
   # here we restrict the filter to act only on the :edit and :update 
   # actions by passing the appropriate :only options hash.
-  before_action :signed_in_user, only: [:edit, :update, :show, :destroy]
+  before_action :signed_in_user, only: [:edit, :update, :show, :destroy, :new]
   before_action :correct_role,   only: [:index]
   #before_action :correct_user,   only: [:edit, :update]
 

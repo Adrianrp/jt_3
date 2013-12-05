@@ -7,4 +7,5 @@ class ApplicationController < ActionController::Base
   # Is a module, and  by default all its functions are available in all the views.
   # but not in the controllers, that is why we have to declare it explicitly
   include SessionsHelper
+  include UsersHelper
 end
