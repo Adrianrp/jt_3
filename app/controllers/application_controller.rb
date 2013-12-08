@@ -8,4 +8,5 @@ class ApplicationController < ActionController::Base
   # but not in the controllers, that is why we have to declare it explicitly
   include SessionsHelper
   include UsersHelper
+  #include CurrentCart
 end

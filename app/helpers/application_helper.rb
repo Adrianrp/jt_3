@@ -13,4 +13,16 @@ module ApplicationHelper
       "#{base_title} | #{page_title}"
     end
   end
+
+  def cart_number
+    cart_id = session[:cart_id]
+  end
+
+  def cart_quantity
+    @cart_id = Cart.find(session[:cart_id])
+    @cart_id.line_items.each do |item|
+      quantity = item.quantity
+      return quantity
+    end
+  end
 end

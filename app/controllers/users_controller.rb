@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+  
   #filter that calls the method: signed_in_user before any other method.
   # here we restrict the filter to act only on the :edit and :update 
   # actions by passing the appropriate :only options hash.
