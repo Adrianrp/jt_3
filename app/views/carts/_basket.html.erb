@@ -1,0 +1,8 @@
+<div class="kurv right"><%= image_tag("kurv.png", alt: "shopping cart") %>
+	<% if cart_number == nil %>
+	<%= link_to "Your cart is empty" %>
+	<% else %>
+	<%= link_to "Go to your order", cart_path(cart_number) %>
+	<%#= cart_quantity %>
+	<% end %>
+</div>
